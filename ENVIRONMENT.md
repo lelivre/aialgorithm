@@ -8,8 +8,7 @@
 ## Ubuntu配置
 1. 安装vim： sudo apt-get install vim
 2. 安装Anaconda(python发行版)：
-首先下载相应版本Anaconda(这里使用的是Python3.6版64位anaconda版本)。之后打开shell输入如下命令；
-```bash ./Anaconda3-5.1.0-Linux-x86_64.sh```
+首先下载相应版本Anaconda(这里使用的是Python3.6版64位anaconda版本)。之后打开shell输入如下命令: ```bash ./Anaconda3-5.1.0-Linux-x86_64.sh```
 之后全称回车和Yes.
 配置环境变量：查看命令：
 ```sudo gedit ~/.bashrc```
@@ -20,12 +19,14 @@
 ```conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --set show_channel_urls yes```
-创建一个名为heron(自定义)的环境；
-conda create -n flappbird python=3.6
-激活环境
-source activate flappbird
-3. 给heron环境安装tensorflow
-`conda install -n flappbird -c https://conda.anaconda.org/jjhelmus tensorflow`
+3. 安装TensorFlow：参见TensorFlow官方网站，源使用清华的镜像，速度会快一点。
+
+4. 安装jupyter notebook:anaconda自带jupyter，如果不能用（出现No module named tensorflow），则在终端输入如下命令，重新安装一遍。
+```source activate tensorflow #激活tensorflow环境
+conda install ipython
+conda install jupyter
+jupyter notebook #重新打开jupyter notebook```
+
 
 
 
