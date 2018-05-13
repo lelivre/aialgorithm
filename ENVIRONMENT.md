@@ -14,11 +14,14 @@
 ```sudo gedit ~/.bashrc```
 检查末尾是否已经添加如下变量，没有则添加：
 ```export PATH="/home/用户名/anaconda3/bin:$PATH"```
+
 **完成之后重启系统**
+
 打开Terminal，更换清华源
 ```conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --set show_channel_urls yes```
+
 3. 安装TensorFlow：参见TensorFlow官方网站，源使用清华的镜像，速度会快一点。
 
 4. 安装jupyter notebook:anaconda自带jupyter，如果不能用（出现No module named tensorflow），则在终端输入如下命令，重新安装一遍。
