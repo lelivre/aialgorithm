@@ -11,26 +11,21 @@
 首先下载相应版本Anaconda(这里使用的是Python3.6版64位anaconda版本)。之后打开shell输入如下命令；
 ```bash ./Anaconda3-5.1.0-Linux-x86_64.sh```
 之后全称回车和Yes.
-
 配置环境变量：查看命令：
 ```sudo gedit ~/.bashrc```
-
 检查末尾是否已经添加如下变量，没有则添加：
 ```export PATH="/home/用户名/anaconda3/bin:$PATH"```
-
 **完成之后重启系统**
-
 打开Terminal，更换清华源
-```    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-    conda config --set show_channel_urls yes```
+```conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --set show_channel_urls yes```
 创建一个名为heron(自定义)的环境；
-    conda create -n flappbird python=3.6
+conda create -n flappbird python=3.6
 激活环境
-    source activate flappbird
-
+source activate flappbird
 3. 给heron环境安装tensorflow
-    conda install -n flappbird -c https://conda.anaconda.org/jjhelmus tensorflow
+`conda install -n flappbird -c https://conda.anaconda.org/jjhelmus tensorflow`
 
 
 
