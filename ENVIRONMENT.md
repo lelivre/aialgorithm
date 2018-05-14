@@ -18,9 +18,11 @@
 **完成之后重启系统**
 
 打开Terminal，更换清华源
-```conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+```
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --set show_channel_urls yes```
+conda config --set show_channel_urls yes
+```
 
 3. 安装TensorFlow：参见TensorFlow官方网站，源使用清华的镜像，速度会快一点。
 
@@ -30,6 +32,7 @@ conda install ipython
 conda install jupyter
 jupyter notebook #重新打开jupyter notebook```
 
+5. 安装opencv: 在conda环境下，输入：conda install opencv,在python环境下输入import cv2查看是否成功。
 
 
 
