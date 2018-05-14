@@ -46,7 +46,12 @@ jupyter notebook #重新打开jupyter notebook```
 
 5. 安装opencv: 在conda环境下，输入：conda install opencv,在python环境下输入import cv2查看是否成功。
 
-6. 按照google输入法
+6. 安装keras
+conda install keras
+
+7. 安装sklearn
+conda install scikit-learn
+
 
 
 
