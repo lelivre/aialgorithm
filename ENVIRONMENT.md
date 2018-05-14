@@ -7,16 +7,17 @@
 
 ## Ubuntu配置
 1. 安装vim： sudo apt-get install vim
+
 2. 安装Anaconda(python发行版)：
 首先下载相应版本Anaconda(这里使用的是Python3.6版64位anaconda版本)。之后打开shell输入如下命令: ```bash ./Anaconda3-5.1.0-Linux-x86_64.sh```
 之后全称回车和Yes.
 配置环境变量：查看命令：
 ```sudo gedit ~/.bashrc```
 检查末尾是否已经添加如下变量，没有则添加：
-```export PATH="/home/用户名/anaconda3/bin:$PATH"```
-
+```
+export PATH="/home/用户名/anaconda3/bin:$PATH"
+```
 **完成之后重启系统**
-
 打开Terminal，更换清华源
 ```
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
@@ -25,6 +26,17 @@ conda config --set show_channel_urls yes
 ```
 
 3. 安装TensorFlow：参见TensorFlow官方网站，源使用清华的镜像，速度会快一点。
+```
+pip install --ignore-installed --upgrade tfBinaryURL
+```
+其中, tfBinaryURL是tensorflow python软件包的网址（建议使用清华镜像）。安装成功以后在python环境下使用以下代码进行测试。
+```
+import tensorflow as tf
+hello = tf.constant('Hello, Tensorflow!')
+sess = tf.Session()
+print(sess.run(hello))
+```
+如果出现Hello, Tensorflow!说明成功。
 
 4. 安装jupyter notebook:anaconda自带jupyter，如果不能用（出现No module named tensorflow），则在终端输入如下命令，重新安装一遍。
 ```source activate tensorflow #激活tensorflow环境
@@ -34,7 +46,7 @@ jupyter notebook #重新打开jupyter notebook```
 
 5. 安装opencv: 在conda环境下，输入：conda install opencv,在python环境下输入import cv2查看是否成功。
 
-
+6. 按照google输入法
 
 
 
