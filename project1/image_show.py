@@ -4,7 +4,7 @@ import sys
 from PyQt5 import QtGui,QtWidgets
 
 
-def show_image(image_path='cat.jpg'):
+def show_image(image_path='equation.jpeg'):
     app = QtWidgets.QApplication(sys.argv)
     pixmap = QtGui.QPixmap(image_path)
     screen = QtWidgets.QLabel()

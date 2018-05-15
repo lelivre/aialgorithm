@@ -24,6 +24,20 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/m
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --set show_channel_urls yes
 ```
+Anaconda创建名为your_env_name的python虚拟环境:
+> conda create -n your_env_name python=X.X（版本号）
+
+激活环境：
+> source activate your_env_name
+
+关闭环境：
+> source deactivate
+
+删除环境：
+> conda remove -n your_env_name --all
+
+删除环境中的某个包：
+> conda remove --name your_env_name package_name
 
 3. 安装TensorFlow：参见TensorFlow官方网站，源使用清华的镜像，速度会快一点。
 ```
