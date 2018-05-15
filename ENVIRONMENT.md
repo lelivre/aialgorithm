@@ -39,10 +39,13 @@ print(sess.run(hello))
 如果出现Hello, Tensorflow!说明成功。
 
 4. 安装jupyter notebook:anaconda自带jupyter，如果不能用（出现No module named tensorflow），则在终端输入如下命令，重新安装一遍。
-```source activate tensorflow #激活tensorflow环境
+
+```
+source activate tensorflow #激活tensorflow环境
 conda install ipython
 conda install jupyter
-jupyter notebook #重新打开jupyter notebook```
+jupyter notebook #重新打开jupyter notebook
+```
 
 5. 安装opencv: 在conda环境下，输入：pip install opencv-python,在python环境下输入import cv2查看是否成功。(如果中间缺少什么模块，按提示安装)
 
