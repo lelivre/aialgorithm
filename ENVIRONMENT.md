@@ -44,7 +44,7 @@ conda install ipython
 conda install jupyter
 jupyter notebook #重新打开jupyter notebook```
 
-5. 安装opencv: 在conda环境下，输入：conda install opencv,在python环境下输入import cv2查看是否成功。
+5. 安装opencv: 在conda环境下，输入：pip install opencv-python,在python环境下输入import cv2查看是否成功。(如果中间缺少什么模块，按提示安装)
 
 6. 安装keras
 conda install keras
