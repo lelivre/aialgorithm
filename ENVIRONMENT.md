@@ -53,5 +53,13 @@ conda install keras
 conda install scikit-learn
 
 
+## 注意事项
 
+1. Ubuntu默认编辑器是Nano，换成Vim的方式如下：
+
+在终端输入：
+
+update-alternatives --config editor
+
+然后选择vim.basic这项即可
 
