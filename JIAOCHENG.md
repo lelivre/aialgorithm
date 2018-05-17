@@ -115,7 +115,7 @@ def CatchUsbVideo(window_name, camera_idx):
   * 创建文件夹，接下来如不做特别说明，所有shell操作都是在此文件夹目录下，我们暂时称为主目录。
   * 创建名为catch_usb_video.py的python文件，将下列代码copy进去，保存，退出。
 
-
+```
     import cv2
     import sys
     from PIL import Image
@@ -146,12 +146,15 @@ def CatchUsbVideo(window_name, camera_idx):
             print("Usage:%s camera_id\r\n" % (sys.argv[0]))
         else:
             CatchUsbVideo("Capturing Video", int(sys.argv[1]))
+```
+
   * 在shell窗口输入：`<python catch_usb_video.py 0>`运行上述程序。 结果如下图所示：
   * 按q关闭Capturing Video窗口
 
 ## 3-识别出人脸
   * 创建名为recognise_face.py的文件夹，存入下述代码：
-  
+
+```  
     #-*- coding: utf-8 -*-
     
     import cv2
@@ -200,13 +203,16 @@ def CatchUsbVideo(window_name, camera_idx):
             print("Usage:%s camera_id\r\n" % (sys.argv[0]))
         else:
             CatchUsbVideo("Recognising Face", int(sys.argv[1]))
+```
+
   * 在shell输入命令`<python recognise_face.py 0>`运行上述代码，跳出的视频窗口中，人脸区域会被方框圈起来。
   
 ## 4-为模型训练准备人脸数据
 这部分采集两个人脸数据，分别存到data/me和data/other 文件夹里。
   * 在主目录下，创建data文件夹，data文件夹里创建me和other文件夹爱。
   * 在主目录下，创建face_data.py文件，存入下述代码
-  
+
+```  
     #-*- coding: utf-8 -*-
 
     import cv2
@@ -269,12 +275,13 @@ def CatchUsbVideo(window_name, camera_idx):
         cap.release()
         cv2.destroyAllWindows() 
 
-    if \_\_name\_\_ == '\_\_main\_\_':
+    if __name__ == '__main__':
         if len(sys.argv) != 4:
             print("Usage:%s camera_id face_num_max path_name\r\n" % (sys.argv[0]))
         else:
             CatchPICFromVideo("Collecting face data", int(sys.argv[1]), int(sys.argv[2]), sys.argv[3])
-            
+```
+
   * 在shell先后运行：`<python face_data.py 0 1000 data/me>` 和`<python face_data.py 0 1000 data/other>`分别采集两个人各1000个人脸数据存入相应文件夹。
   * 手动剔除data文件夹中不是图片文件的数据。
 
@@ -282,7 +289,8 @@ def CatchUsbVideo(window_name, camera_idx):
 利用keras库来建立模型和评估模型
   * 主目录下建立model文件夹:`<mkdir model>`
   * 主目录下建立face_train_keras.py文件，存入下述代码：
-  
+
+```
     #-*- coding: utf-8 -*-
     import random
 
@@ -486,7 +494,7 @@ def CatchUsbVideo(window_name, camera_idx):
             #返回类别预测结果
             return result[0]
 
-    if \_\_name\_\_ == '\_\_main\_\_':
+    if __name__ == '__main__':
         dataset = Dataset('./data/')
         dataset.load()
         
@@ -495,7 +503,8 @@ def CatchUsbVideo(window_name, camera_idx):
         model.build_model(dataset)
         model.train(dataset)
         model.save_model(file_path = './model/me.face.model.h5')
-        
+```
+
   * 在shell运行：`<python face_train_use_keras.py>`保存模型，可以看到训练误差（loss)、训练准确率（acc)、验证误差（val_loass）、验证准确率（val_acc）。
   * 修改face_train_use_keras.py，将训练模型注释掉，添加评估模型，如下：
         
@@ -519,6 +528,7 @@ def CatchUsbVideo(window_name, camera_idx):
 
   * 主目录下创建face_predict_use_keras.py文件，存入下述代码：
 
+```
     #-*- coding: utf-8 -*-
 
     import cv2
@@ -526,7 +536,7 @@ def CatchUsbVideo(window_name, camera_idx):
     import gc
     from face_train_use_keras import Model
 
-    if \_\_name\_\_ == '\_\_main\_\_':
+    if __name__ == '__main__':
         if len(sys.argv) != 2:
             print("Usage:%s camera_id\r\n" % (sys.argv[0]))
             sys.exit(0)
@@ -589,6 +599,7 @@ def CatchUsbVideo(window_name, camera_idx):
         #释放摄像头并销毁所有窗口
         cap.release()
         cv2.destroyAllWindows()
+```
 
   * 在shell输入：`<python face_predict_use_keras.py 0>`可以看到视频窗口里自己的头像会被文字“Me”标出。
   
