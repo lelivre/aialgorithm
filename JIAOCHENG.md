@@ -26,7 +26,7 @@ ubuntu自带python的版本为2.7。但python3的普及程度及重要性越来�
 1. 安装Anaconda(一个开源的python发行版)。
   * 首先[下载](https://www.anaconda.com/download/#linux)相应版本Anaconda(这里使用的是Python3.6版64位anaconda版本)。
   * 安装。终端输入: `<bash ./Anaconda3-5.1.0-Linux-x86_64.sh>`进行安装，全程回车和Yes。
-  * 配置环境变量。首先输入`<sudo gedit ~/.bashrc>` 检查末尾是否已经添加如下变量，没有则添加：`<export PATH="/home/用户名/anaconda3/bin:(dollar sign)PATH">`。
+  * 配置环境变量。首先输入`<sudo gedit ~/.bashrc>` 检查末尾是否已经添加如下变量，没有则添加：`<export PATH="/home/用户名/anaconda3/bin:$PATH">`。
   * 重启系统：注销或重启。
   * 更换清华源，提升安装速度。在终端输入：
 ```
@@ -34,7 +34,8 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/m
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --set show_channel_urls yes
 ```
-  * Anaconda创建名为your_env_name(建议命名为tensorflow)的python虚拟环境:`<conda create -n tensorflow python=3.6>`
+2. Anaconda创建名为your_env_name(建议命名为tensorflow)的python虚拟环境
+  * 创建环境：`<conda create -n tensorflow python=3.6>`
   * 激活环境：`<source activate tensorflow>`
   * 关闭环境：`<source deactivate>`
   * 删除环境(需要时使用，甚重操作)：`<conda remove -n your_env_name --all>`
