@@ -18,8 +18,11 @@
 * git push origin test %上传分支
 * git checkout master %切换到master分支
 * git checkout -b branchname %创建新的分支：branchname
+* git add "文件名"
 * git commit -a %提交
 * git push origin branchname %上传
 
-### NIGHTHERON IS ON
-`<abcEDDGESGFAAdfgdfgd>`
+## 推荐博文：
+> https://www.oschina.net/news/79500/57-most-popular-deep-learning-project-at-github
+
+> http://www.sohu.com/a/225662651_100105484

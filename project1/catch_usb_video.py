@@ -28,4 +28,4 @@ if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Usage:%s camera_id\r\n" % (sys.argv[0]))
     else:
-        CatchUsbVideo("VideoFlow", int(sys.argv[1]))
+        CatchUsbVideo("Caturing Video", int(sys.argv[1]))
