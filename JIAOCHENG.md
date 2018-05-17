@@ -1,3 +1,5 @@
+![title](Pictures/figure2.jpeg)
+
 # 最详细深度学习入门：用tensorflow实现人脸检测及识别
 
 ## 0-前言
@@ -144,12 +146,12 @@ def CatchUsbVideo(window_name, camera_idx):
             print("Usage:%s camera_id\r\n" % (sys.argv[0]))
         else:
             CatchUsbVideo("Capturing Video", int(sys.argv[1]))
-  * 在shell窗口输入：`<python catch_usb_video.py 0>`运行上述程序。
+  * 在shell窗口输入：`<python catch_usb_video.py 0>`运行上述程序。 结果如下图所示：
   * 按q关闭Capturing Video窗口
 
 ## 3-识别出人脸
   * 创建名为recognise_face.py的文件夹，存入下述代码：
-
+  
     #-*- coding: utf-8 -*-
     
     import cv2
@@ -267,11 +269,12 @@ def CatchUsbVideo(window_name, camera_idx):
         cap.release()
         cv2.destroyAllWindows() 
 
-    if __name__ == '__main__':
+    if \_\_name\_\_ == '\_\_main\_\_':
         if len(sys.argv) != 4:
             print("Usage:%s camera_id face_num_max path_name\r\n" % (sys.argv[0]))
         else:
             CatchPICFromVideo("Collecting face data", int(sys.argv[1]), int(sys.argv[2]), sys.argv[3])
+            
   * 在shell先后运行：`<python face_data.py 0 1000 data/me>` 和`<python face_data.py 0 1000 data/other>`分别采集两个人各1000个人脸数据存入相应文件夹。
   * 手动剔除data文件夹中不是图片文件的数据。
 
@@ -483,7 +486,7 @@ def CatchUsbVideo(window_name, camera_idx):
             #返回类别预测结果
             return result[0]
 
-    if __name__ == '__main__':
+    if \_\_name\_\_ == '\_\_main\_\_':
         dataset = Dataset('./data/')
         dataset.load()
         
@@ -523,7 +526,7 @@ def CatchUsbVideo(window_name, camera_idx):
     import gc
     from face_train_use_keras import Model
 
-    if __name__ == '__main__':
+    if \_\_name\_\_ == '\_\_main\_\_':
         if len(sys.argv) != 2:
             print("Usage:%s camera_id\r\n" % (sys.argv[0]))
             sys.exit(0)
@@ -595,6 +598,7 @@ def CatchUsbVideo(window_name, camera_idx):
   * 在主目录下放一张图片，本文放的是equation.jpg
   * 创建image_show.py的文件，存入下述代码：
   
+```  
     import sys
 
     from PyQt5 import QtGui,QtWidgets
@@ -608,10 +612,9 @@ def CatchUsbVideo(window_name, camera_idx):
         screen.showFullScreen()
         sys.exit(app.exec_())
 
-
     if __name__ == '__main__':
     show_image()
-
+```
   * 修改face_predict_use_keras.py文件，在开头部分添加`<from image_show import show_image>`;在“如果是我”部分，添加`<image_show()>`如下：
   
       #如果是“我”
@@ -629,6 +632,7 @@ def CatchUsbVideo(window_name, camera_idx):
 
                     else:
     pass
+    
   * shell输入`<python face_predict_use_keras.py 0>`,将脸慢慢对准摄像头，可以看到屏幕变成预设的全屏图片。
   * 把自己头像换成老板头像进行训练、识别，就是老板检测器了。
   * 键盘win键，可以关闭全屏图片。
