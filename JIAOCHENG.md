@@ -144,12 +144,12 @@ def CatchUsbVideo(window_name, camera_idx):
             print("Usage:%s camera_id\r\n" % (sys.argv[0]))
         else:
             CatchUsbVideo("Capturing Video", int(sys.argv[1]))
-  * 在shell窗口输入：`<python catch_usb_video.py 0>`运行上述程序。 结果如下图所示：
-  ![利用OpenCV显示摄像头视频流](/home/alain/Pictures/figure1.png)
+  * 在shell窗口输入：`<python catch_usb_video.py 0>`运行上述程序。
   * 按q关闭Capturing Video窗口
 
 ## 3-识别出人脸
   * 创建名为recognise_face.py的文件夹，存入下述代码：
+
     #-*- coding: utf-8 -*-
     
     import cv2
