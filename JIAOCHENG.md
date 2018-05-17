@@ -1,5 +1,3 @@
-![BossSense](/home/alain/Pictures/figure2.jpeg)
-
 # 最详细深度学习入门：用tensorflow实现人脸检测及识别
 
 ## 0-前言
